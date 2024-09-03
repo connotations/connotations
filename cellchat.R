@@ -18,7 +18,7 @@ library(ggsci)
 #创建Cellchat对象
 
 ##提取表达矩阵和细胞分类信息
-ccRCCsub <- subset(RCC_merge_filter,group=="ccRCC")
+
 levels(epi_sub_annotation_fixed)
 data.input <- GetAssayData(epi_sub_annotation_fixed, assay = "RNA", slot = "data")
 meta <- subset(epi_sub_annotation_fixed@meta.data, select = "celltype_sub")
