@@ -1,13 +1,10 @@
-pacman::p_unload(pacman::p_loaded(), character.only = TRUE)
+
 library(pacman)
 library(monocle)
-basal_sub <- subset(epi_sub_3,celltype_sub=="basal_Krt15high"|celltype_sub=="basal_Krt15low")
-fibro_sub <- subset(mesenchymal_sub_2,celltype_sub=="Fibro_Gpx3"|celltype_sub=="Fibro_Dpp4"|celltype_sub=="Fibro_Myoc")
-basal_sub <- subset(basal_sub,downsample=500)
-fibro_sub <- subset(fibro_sub,downsample=500)
+
 
 basal_fibro_merge <- merge(basal_sub,fibro_sub)
-basal_fibro_merge <- subset(mac_sub,downsample=500)
+
 expr_matrix <- as(as.matrix(basal_fibro_merge@assays$RNA@counts), 'sparseMatrix')
 ##提取表型信息到p_data(phenotype_data)里面 
 p_data <-basal_fibro_merge@meta.data 
