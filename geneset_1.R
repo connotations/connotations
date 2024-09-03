@@ -21,26 +21,6 @@ VlnPlot(object = prostate_merge_annotation_4st,
 RidgePlot(prostate_merge_annotation_4st, features = "infla_resp_score1",group.by = 'group',cols = c("pink",  "#048BA8"))
 myeloid_sub <- prostate
 saveRDS(myeloid_sub,file = "prostate_merge_uptodate.rds")
-senescence <- c("Mir290a","Mir193b","Mir877","Mir1897","Mir378b","Mir5100",
-                "Mir378d","Hmga1b","Abl1","Pawr","Prelp","Arg2","Arntl","B2m",
-                "Bcl6","Bmpr1a","Brca2","Calr","Cav1","Cdk6","Cdkn1a","Cdkn2a",
-                "Cdkn2b","Htt","Hmga1","Hmga2","Hras","Id2","Ilk","Kras","Lmna",
-                "Mapkapk5","Mif","Mnt","Npm1","Nup62","Prkcd","Pla2r1","Pml",
-                "Prkdc","Pten","Rbl1","Spi1","Plk2","Srf","Suv39h1","Tbx2","Tbx3",
-                "Cgas","Terf2","Tert","Trp53","Trp63","Twist1","Wnt1","Wrn",
-                "Smc5","Ybx1","Slc30a10","Zfp217","Zmpste24","Akt3","Vash1",
-                "Nek4","Kat6a","Zfp277","Map2k1","Map3k3","Mapk14","Zmiz1",
-                "Morc3","Mir16-1","Mir20a","Mir22","Mir24-1","Mir128-1",
-                "Mir130a","Mir132","Mir134","Mir140","Mir15a","Mir15b",
-                "Mir183","Mir188","Mir191","Mir199a-1","Mir19b-2","Mir211",
-                "Mir23a","Mir23b","Mir27a","Mir30a","Mir99a","Mir125a","Mir125b-1",
-                "Mirlet7b","Mirlet7d","Mirlet7g","Mirlet7i","Mirlet7f-1",
-                "Mirlet7f-2","Sirt6","Fzr1","Mtor","Icmt","Nampt","Ypel3","Eef1e1",
-                "Rsl1d1","Abi3","Fbxo5","Smc6","Nsmce2","Ing2","Pnpt1","Mir128-2",
-                "Mir199a-2","Mir34a","Mir34b","Mir370","Mir483","Mir378a",
-                "Mir31","Mir296","Mir342","Mir25","Mir34c","Mir16-2","Mir125b-2",
-                "Mir24-2","Pot1b","Mir671","Opa1","Mir19b-1","Bcl2l12",
-                "Nuak1","Ecrg4","Dnaja3","Wnt16","Sirt1","Prmt6")
 senescence <- intersect(senescence,rownames(prostate_merge_annotation_6st@assays$RNA))
 senescence <- as.data.frame(senescence )
 senescence <- as.list(senescence )
